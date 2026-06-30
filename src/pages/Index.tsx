@@ -28,8 +28,12 @@ const prices = [
 
 
 
+const PHONE = '8 (929) 365-63-56';
+const PHONE_HREF = 'tel:+79293656356';
+
 const Index = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const [showPhone, setShowPhone] = useState(false);
 
   const nav = [
     { label: 'Главная', href: '#home' },
@@ -93,13 +97,20 @@ const Index = () => {
               Прополка, обрезка, полив и сезонный уход. Мы возвращаем садам и огородам ухоженный, живой вид — бережно и с любовью к природе.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="rounded-full px-8 h-13 text-base">
+              <Button size="lg" className="rounded-full px-8 h-13 text-base" onClick={() => setShowPhone(true)}>
                 Заказать уход <Icon name="ArrowRight" size={18} className="ml-1" />
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 h-13 text-base border-primary/30">
+              <Button size="lg" variant="outline" className="rounded-full px-8 h-13 text-base border-primary/30" onClick={() => document.getElementById('prices')?.scrollIntoView({ behavior: 'smooth' })}>
                 Узнать цены
               </Button>
             </div>
+            {showPhone && (
+              <div className="mt-6 inline-flex items-center gap-3 bg-primary text-primary-foreground rounded-2xl px-6 py-4 animate-grow-in">
+                <Icon name="Phone" size={20} />
+                <span className="font-semibold text-lg">Звоните:</span>
+                <a href={PHONE_HREF} className="font-display text-2xl font-semibold underline underline-offset-4">{PHONE}</a>
+              </div>
+            )}
             <div className="flex items-center gap-8 mt-12">
               <div>
                 <div className="font-display text-4xl font-semibold text-primary">5 лет</div>
@@ -174,11 +185,9 @@ const Index = () => {
                 <h3 className="font-display text-2xl font-semibold mb-1">{p.name}</h3>
                 <div className="text-sm opacity-70 mb-6">{p.unit}</div>
                 <div className="font-display text-4xl font-semibold mb-8">{p.price}</div>
-                <Button
-                  className={`mt-auto rounded-full ${p.popular ? 'bg-accent-foreground text-accent hover:bg-accent-foreground/90' : 'bg-primary-foreground text-primary hover:bg-primary-foreground/90'}`}
-                >
-                  Заказать
-                </Button>
+                <a href={PHONE_HREF} className={`mt-auto inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 font-medium text-sm transition-opacity hover:opacity-90 ${p.popular ? 'bg-accent-foreground text-accent' : 'bg-primary-foreground text-primary'}`}>
+                  <Icon name="Phone" size={15} /> Заказать
+                </a>
               </div>
             ))}
           </div>
@@ -193,9 +202,11 @@ const Index = () => {
           <div className="rounded-[2rem] bg-primary text-primary-foreground p-10 lg:p-16 text-center mb-14">
             <h2 className="font-display text-4xl lg:text-5xl font-semibold mb-4">Пора привести сад в порядок?</h2>
             <p className="opacity-80 text-lg max-w-xl mx-auto mb-8">Оставьте заявку — приедем, осмотрим участок и составим план ухода бесплатно.</p>
-            <Button size="lg" className="rounded-full px-8 h-13 text-base bg-accent text-accent-foreground hover:bg-accent/90">
-              Оставить заявку <Icon name="ArrowRight" size={18} className="ml-1" />
-            </Button>
+            <a href={PHONE_HREF}>
+              <Button size="lg" className="rounded-full px-8 h-13 text-base bg-accent text-accent-foreground hover:bg-accent/90">
+                <Icon name="Phone" size={18} className="mr-2" /> {PHONE}
+              </Button>
+            </a>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
