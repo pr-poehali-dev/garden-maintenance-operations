@@ -9,13 +9,21 @@ const services = [
   { icon: 'Droplets', title: 'Полив растений', text: 'Своевременный полив в нужном количестве — растения не пересыхают и хорошо плодоносят.' },
   { icon: 'Apple', title: 'Сбор урожая', text: 'Бережно собираем и сортируем урожай в удобное для вас время.' },
   { icon: 'PawPrint', title: 'Уход за животными', text: 'Присмотрим за питомцами во время вашего отсутствия — собаки, кошки и другие домашние животные.' },
+  { icon: 'Trash2', title: 'Уборка участка', text: 'Собираем листву, ботву, скошенную траву и мусор — участок будет чистым и опрятным.' },
+  { icon: 'Shovel', title: 'Рыхление почвы', text: 'Рыхлим землю вокруг растений, чтобы корни дышали и лучше получали влагу.' },
+  { icon: 'Package', title: 'Заготовка на зиму', text: 'Поможем перебрать, расфасовать и убрать на хранение овощи, фрукты и зелень.' },
+  { icon: 'Fence', title: 'Мелкий уход за двором', text: 'Подметём дорожки, уберём паутину, польём цветы на веранде — всё то, что руки не доходят сделать.' },
 ];
 
 const prices = [
   { name: 'Прополка', unit: 'разово', price: '300 ₽/час', popular: false },
   { name: 'Полив растений', unit: 'разово', price: '300 ₽/час', popular: false },
   { name: 'Сбор урожая', unit: 'разово', price: '300 ₽/час', popular: false },
-  { name: 'Уход за животными', unit: 'разово', price: '300 ₽/час', popular: true },
+  { name: 'Уход за животными', unit: 'разово', price: '300 ₽/час', popular: false },
+  { name: 'Уборка участка', unit: 'разово', price: '300 ₽/час', popular: false },
+  { name: 'Рыхление почвы', unit: 'разово', price: '300 ₽/час', popular: false },
+  { name: 'Заготовка на зиму', unit: 'разово', price: '300 ₽/час', popular: false },
+  { name: 'Мелкий уход за двором', unit: 'разово', price: '300 ₽/час', popular: true },
 ];
 
 const reviews = [
@@ -135,7 +143,7 @@ const Index = () => {
             <h2 className="font-display text-4xl lg:text-5xl font-semibold mt-3 mb-4">Полный уход за вашим садом</h2>
             <p className="text-muted-foreground text-lg">От первой прополки до богатого урожая — берём всю заботу о земле на себя.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s) => (
               <div key={s.title} className="hover-lift bg-card rounded-2xl p-8 border border-border">
                 <span className="grid place-items-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-6">
@@ -161,7 +169,7 @@ const Index = () => {
             <h2 className="font-display text-4xl lg:text-5xl font-semibold mt-3 mb-4">Честные цены без сюрпризов</h2>
             <p className="opacity-80 text-lg">Все услуги тарифицируются по времени — <strong>300 ₽/час</strong>. Оплата только за фактически отработанное время.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {prices.map((p) => (
               <div
                 key={p.name}
