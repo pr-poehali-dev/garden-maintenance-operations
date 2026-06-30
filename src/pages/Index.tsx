@@ -44,7 +44,7 @@ const Index = () => {
             <span className="grid place-items-center w-10 h-10 rounded-full bg-primary text-primary-foreground">
               <Icon name="Sprout" size={22} />
             </span>
-            <span className="font-display text-2xl font-semibold tracking-tight">Зелёный Двор</span>
+            <span className="font-display text-2xl font-semibold tracking-tight">Огород без хлопот</span>
           </a>
           <nav className="hidden md:flex items-center gap-9">
             {nav.map((n) => (
@@ -217,13 +217,13 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <Icon name="Sprout" size={20} className="text-primary" />
-              <span className="font-display text-lg font-semibold text-foreground">Зелёный Двор</span>
+              <span className="font-display text-lg font-semibold text-foreground">Огород без хлопот</span>
             </div>
             <div className="flex items-center gap-6">
               <span className="flex items-center gap-2"><Icon name="Phone" size={16} /> 8 (929) 365-63-56</span>
               <span className="flex items-center gap-2"><Icon name="MapPin" size={16} /> Москва и область</span>
             </div>
-            <span>© 2026 Зелёный Двор</span>
+            <span>© 2026 Огород без хлопот</span>
           </div>
         </div>
       </footer>
