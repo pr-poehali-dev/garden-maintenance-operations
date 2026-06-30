@@ -106,13 +106,8 @@ const Index = () => {
             </div>
             <div className="flex items-center gap-8 mt-12">
               <div>
-                <div className="font-display text-4xl font-semibold text-primary">12 лет</div>
+                <div className="font-display text-4xl font-semibold text-primary">5 лет</div>
                 <div className="text-sm text-muted-foreground">в садоводстве</div>
-              </div>
-              <div className="w-px h-12 bg-border" />
-              <div>
-                <div className="font-display text-4xl font-semibold text-primary">800+</div>
-                <div className="text-sm text-muted-foreground">ухоженных участков</div>
               </div>
             </div>
           </div>
