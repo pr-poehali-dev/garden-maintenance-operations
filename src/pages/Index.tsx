@@ -5,18 +5,17 @@ import { Button } from '@/components/ui/button';
 const HERO_IMG = 'https://cdn.poehali.dev/projects/placeholder.svg';
 
 const services = [
-  { icon: 'Sprout', title: 'Прополка грядок', text: 'Аккуратно убираем сорняки вручную, не повреждая ваши растения и корневую систему.' },
-  { icon: 'Scissors', title: 'Обрезка и формовка', text: 'Формируем кусты, деревья и живые изгороди для здорового роста и красивого вида.' },
-  { icon: 'Droplets', title: 'Полив и подкормка', text: 'Настраиваем правильный режим полива и вносим органические удобрения по сезону.' },
-  { icon: 'Leaf', title: 'Уход за газоном', text: 'Стрижём, аэрируем и восстанавливаем газон — двор всегда будет ухоженным.' },
-  { icon: 'Shovel', title: 'Подготовка почвы', text: 'Перекапываем, рыхлим и мульчируем землю перед посадкой для богатого урожая.' },
-  { icon: 'TreeDeciduous', title: 'Посадка растений', text: 'Высаживаем рассаду, кустарники и деревья с гарантией приживаемости.' },
+  { icon: 'Sprout', title: 'Прополка', text: 'Аккуратно убираем сорняки вручную, не повреждая ваши растения и корневую систему.' },
+  { icon: 'Droplets', title: 'Полив растений', text: 'Своевременный полив в нужном количестве — растения не пересыхают и хорошо плодоносят.' },
+  { icon: 'Apple', title: 'Сбор урожая', text: 'Бережно собираем и сортируем урожай в удобное для вас время.' },
+  { icon: 'PawPrint', title: 'Уход за животными', text: 'Присмотрим за питомцами во время вашего отсутствия — собаки, кошки и другие домашние животные.' },
 ];
 
 const prices = [
-  { name: 'Разовая прополка', unit: 'за сотку', price: '800 ₽', popular: false },
-  { name: 'Сезонный уход', unit: 'в месяц', price: '6 500 ₽', popular: true },
-  { name: 'Комплекс «Под ключ»', unit: 'за участок', price: 'от 15 000 ₽', popular: false },
+  { name: 'Прополка', unit: 'разово', price: '300 ₽/час', popular: false },
+  { name: 'Полив растений', unit: 'разово', price: '300 ₽/час', popular: false },
+  { name: 'Сбор урожая', unit: 'разово', price: '300 ₽/час', popular: false },
+  { name: 'Уход за животными', unit: 'разово', price: '300 ₽/час', popular: true },
 ];
 
 const reviews = [
@@ -72,9 +71,17 @@ const Index = () => {
       <section id="home" className="relative overflow-hidden">
         <div className="container grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-28">
           <div className="animate-grow-in">
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-accent mb-6">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-accent mb-3">
               <Icon name="Leaf" size={16} /> Уход за садом и огородом
             </span>
+            <div className="flex flex-wrap gap-3 mb-6">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary/10 text-primary px-3 py-1.5 rounded-full">
+                <Icon name="MapPin" size={13} /> с. Казачинское, Красноярский край
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary/10 text-primary px-3 py-1.5 rounded-full">
+                <Icon name="MapPin" size={13} /> с. Новокаргино, Енисейский район
+              </span>
+            </div>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] font-semibold mb-6">
               Заботливые руки <br className="hidden sm:block" /> для вашей <em className="text-primary not-italic">земли</em>
             </h1>
@@ -128,16 +135,20 @@ const Index = () => {
             <h2 className="font-display text-4xl lg:text-5xl font-semibold mt-3 mb-4">Полный уход за вашим садом</h2>
             <p className="text-muted-foreground text-lg">От первой прополки до богатого урожая — берём всю заботу о земле на себя.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
               <div key={s.title} className="hover-lift bg-card rounded-2xl p-8 border border-border">
                 <span className="grid place-items-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-6">
-                  <Icon name={s.icon} size={26} />
+                  <Icon name={s.icon} size={26} fallback="Leaf" />
                 </span>
                 <h3 className="font-display text-2xl font-semibold mb-3">{s.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{s.text}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-6 rounded-2xl bg-accent/10 border border-accent/20 px-8 py-5 flex items-start gap-4">
+            <Icon name="PawPrint" size={22} className="text-accent mt-0.5 shrink-0" fallback="Heart" />
+            <p className="text-sm text-foreground/80"><strong>Уход за животными включает:</strong> выгул и кормление собак, уход за кошками и другими домашними питомцами во время отсутствия хозяев.</p>
           </div>
         </div>
       </section>
@@ -148,9 +159,9 @@ const Index = () => {
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-sm font-medium text-secondary">Прайс</span>
             <h2 className="font-display text-4xl lg:text-5xl font-semibold mt-3 mb-4">Честные цены без сюрпризов</h2>
-            <p className="opacity-80 text-lg">Стоимость зависит от площади и состояния участка. Точную цену назовём после осмотра.</p>
+            <p className="opacity-80 text-lg">Все услуги тарифицируются по времени — <strong>300 ₽/час</strong>. Оплата только за фактически отработанное время.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {prices.map((p) => (
               <div
                 key={p.name}
@@ -221,7 +232,8 @@ const Index = () => {
             </div>
             <div className="flex items-center gap-6">
               <span className="flex items-center gap-2"><Icon name="Phone" size={16} /> 8 (929) 365-63-56</span>
-              <span className="flex items-center gap-2"><Icon name="MapPin" size={16} /> Москва и область</span>
+              <span className="flex items-center gap-2"><Icon name="MapPin" size={16} /> с. Казачинское, Красноярский край</span>
+              <span className="flex items-center gap-2"><Icon name="MapPin" size={16} /> с. Новокаргино, Енисейский район</span>
             </div>
             <span>© 2026 Огород без хлопот</span>
           </div>
