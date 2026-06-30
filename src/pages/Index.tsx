@@ -220,7 +220,7 @@ const Index = () => {
               <span className="font-display text-lg font-semibold text-foreground">Зелёный Двор</span>
             </div>
             <div className="flex items-center gap-6">
-              <span className="flex items-center gap-2"><Icon name="Phone" size={16} /> +7 (900) 000-00-00</span>
+              <span className="flex items-center gap-2"><Icon name="Phone" size={16} /> 8 (929) 365-63-56</span>
               <span className="flex items-center gap-2"><Icon name="MapPin" size={16} /> Москва и область</span>
             </div>
             <span>© 2026 Зелёный Двор</span>
