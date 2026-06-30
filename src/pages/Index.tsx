@@ -16,14 +16,14 @@ const services = [
 ];
 
 const prices = [
-  { name: 'Прополка', unit: 'за час работы', price: '300 ₽/час', popular: false },
-  { name: 'Полив растений', unit: 'за участок', price: 'от 500 ₽', popular: false },
-  { name: 'Сбор урожая', unit: 'за участок', price: 'от 800 ₽', popular: false },
-  { name: 'Уход за животными', unit: 'за день', price: 'от 500 ₽', popular: false },
-  { name: 'Уборка участка', unit: 'за участок', price: 'от 1 000 ₽', popular: false },
-  { name: 'Рыхление почвы', unit: 'за грядку', price: 'от 400 ₽', popular: false },
-  { name: 'Заготовка на зиму', unit: 'за сессию', price: 'от 700 ₽', popular: false },
-  { name: 'Мелкий уход за двором', unit: 'за час работы', price: '300 ₽/час', popular: false },
+  { name: 'Прополка', unit: 'за час работы', price: '200 ₽/час', popular: false },
+  { name: 'Полив растений', unit: 'за участок', price: 'от 250 ₽', popular: false },
+  { name: 'Сбор урожая', unit: 'за участок', price: 'от 350 ₽', popular: false },
+  { name: 'Уход за животными', unit: 'за день', price: 'от 300 ₽', popular: false },
+  { name: 'Уборка участка', unit: 'за участок', price: 'от 400 ₽', popular: false },
+  { name: 'Рыхление почвы', unit: 'за грядку', price: 'от 200 ₽', popular: false },
+  { name: 'Заготовка на зиму', unit: 'за сессию', price: 'от 300 ₽', popular: false },
+  { name: 'Мелкий уход за двором', unit: 'за час работы', price: '200 ₽/час', popular: false },
 ];
 
 const reviews = [
@@ -167,7 +167,7 @@ const Index = () => {
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-sm font-medium text-secondary">Прайс</span>
             <h2 className="font-display text-4xl lg:text-5xl font-semibold mt-3 mb-4">Честные цены без сюрпризов</h2>
-            <p className="opacity-80 text-lg">Прополка и мелкие работы — <strong>300 ₽/час</strong>. Остальные услуги — фиксированная разовая цена. Точную стоимость назовём после уточнения объёма.</p>
+            <p className="opacity-80 text-lg">Прополка и мелкие работы — <strong>200 ₽/час</strong>. Остальные услуги — фиксированная разовая цена. Точную стоимость назовём после уточнения объёма.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {prices.map((p) => (
