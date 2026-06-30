@@ -77,7 +77,7 @@ const Index = () => {
 
       {/* Hero */}
       <section id="home" className="relative overflow-hidden">
-        <div className="container grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-28">
+        <div className="container max-w-3xl py-16 lg:py-28">
           <div className="animate-grow-in">
             <span className="inline-flex items-center gap-2 text-sm font-medium text-accent mb-3">
               <Icon name="Leaf" size={16} /> Уход за садом и огородом
@@ -119,21 +119,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="relative animate-grow-in" style={{ animationDelay: '0.15s' }}>
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5]">
-              <img src={HERO_IMG} alt="Сад и огород" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-xl p-5 flex items-center gap-3 border border-border">
-              <span className="grid place-items-center w-11 h-11 rounded-full bg-accent text-accent-foreground">
-                <Icon name="ShieldCheck" size={22} />
-              </span>
-              <div>
-                <div className="font-semibold text-sm">Гарантия результата</div>
-                <div className="text-xs text-muted-foreground">Бережный уход за каждым ростком</div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
