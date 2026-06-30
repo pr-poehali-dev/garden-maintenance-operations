@@ -26,11 +26,7 @@ const prices = [
   { name: 'Мелкий уход за двором', unit: 'за час работы', price: '200–600 ₽/час', popular: false },
 ];
 
-const reviews = [
-  { name: 'Ольга Маркова', role: 'дача в Подмосковье', text: 'За один день привели в порядок весь огород. Грядки чистые, всё аккуратно. Очень довольна, теперь только к ним!' },
-  { name: 'Сергей Иванов', role: 'частный дом', text: 'Заказывал сезонный уход. Приезжают вовремя, работают честно и бережно. Сад наконец-то выглядит как с картинки.' },
-  { name: 'Наталья П.', role: 'садовый участок', text: 'Помогли подготовить почву и высадить рассаду. Урожай в этом году рекордный. Спасибо за заботу о земле!' },
-];
+
 
 const Index = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -39,7 +35,7 @@ const Index = () => {
     { label: 'Главная', href: '#home' },
     { label: 'Услуги', href: '#services' },
     { label: 'Прайс', href: '#prices' },
-    { label: 'Отзывы', href: '#reviews' },
+
   ];
 
   return (
@@ -189,34 +185,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section id="reviews" className="py-20 lg:py-28">
-        <div className="container">
-          <div className="max-w-2xl mb-14">
-            <span className="text-sm font-medium text-accent">Отзывы</span>
-            <h2 className="font-display text-4xl lg:text-5xl font-semibold mt-3 mb-4">Нам доверяют свою землю</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {reviews.map((r) => (
-              <div key={r.name} className="hover-lift bg-card rounded-2xl p-8 border border-border flex flex-col">
-                <div className="flex gap-1 text-accent mb-5">
-                  {[...Array(5)].map((_, i) => <Icon key={i} name="Star" size={18} className="fill-current" />)}
-                </div>
-                <p className="text-foreground/90 leading-relaxed mb-7 flex-1">«{r.text}»</p>
-                <div className="flex items-center gap-3">
-                  <span className="grid place-items-center w-11 h-11 rounded-full bg-primary/10 text-primary font-display text-lg font-semibold">
-                    {r.name[0]}
-                  </span>
-                  <div>
-                    <div className="font-semibold text-sm">{r.name}</div>
-                    <div className="text-xs text-muted-foreground">{r.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA + Footer */}
       <footer className="bg-card border-t border-border">
